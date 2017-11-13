@@ -1,0 +1,16 @@
+<html>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/5.0.1/Rx.min.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const demo = urlParams.get('id') || 0;
+    const url = `/demo/${demo}.js`;
+    import(url).then(m => {
+      console.log(m);
+      m.run();
+    });
+  </script>
+</body>
+
+</html>
